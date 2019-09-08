@@ -1,3 +1,5 @@
+from __future__ import print_function
+
 from foo import f1
 
 f1(1, 2)
@@ -14,7 +16,7 @@ def f2(*args):
         p1, p2, p3 = args
     else:
         raise TypeError("takes at most 3 arguments (%d given)" % la)
-    print p1, p2, p3
+    print(p1, p2, p3)
 
 
 f2(1, 2)
