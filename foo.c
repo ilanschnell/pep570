@@ -24,8 +24,5 @@ static PyMethodDef module_functions[] = {
 PyMODINIT_FUNC
 initfoo(void)
 {
-    PyObject *m;
-
-    m = Py_InitModule3("foo", module_functions, 0);
-    assert (m != NULL);
+    Py_InitModule3("foo", module_functions, 0);
 }
