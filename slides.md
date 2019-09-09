@@ -124,9 +124,9 @@ Invalid calls:
 
 ---
 
-# General Syntax and Semantics
+# Syntax and Semantics
 
-New syntax:
+Python 3.8 syntax:
 
     def name(positional_only_parameters, /,
              positional_or_keyword_parameters, *,
@@ -155,3 +155,21 @@ The standard library will adopt positional-only parameters first.
 
 Third party library can only adopt positional-only parameters when once
 Python 3.8 and higher is targeted.
+
+---
+
+# Summary
+
+Use case will determine which parameters to use in function definition:
+
+    def f(pos1, pos2, /, pos_or_kwd, *, kwd1, kwd2):
+
+
+As guidance:
+
+  * Use positional-only if names do not matter or have no meaning,
+    and there are only a few arguments which will always be passed in
+    the same order.
+
+  * Use keyword-only when names have meaning and the function definition
+    is more understandable by being explicit with names.
