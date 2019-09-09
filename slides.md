@@ -142,3 +142,15 @@ Examples:
     sorted(iterable, /, *, key=None, reverse=False)
 
     sum(iterable, /, start=0)
+
+---
+
+# Adoption
+
+As the new syntax breaks Python 3.7 and earlier, I don't expect adoption
+anytime soon.
+
+The standard library will adopt positional-only parameters first.
+
+Third party library can only adopt positional-only parameters when once
+Python 3.8 and higher is targeted.
