@@ -128,10 +128,11 @@ Invalid calls:
 
 New syntax:
 
-    def name(positional_only_parameters, /, positional_or_keyword_parameters,
-             *, keyword_only_parameters):
+    def name(positional_only_parameters, /,
+             positional_or_keyword_parameters, *,
+             keyword_only_parameters):
 
-Examples:
+Examples (from Python 3.7 docstrings):
 
     divmod(x, y, /)
 
