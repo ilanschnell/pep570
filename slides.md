@@ -17,7 +17,7 @@ When defining a function like:
 `x` and `y` are required, `z` is optional.
 Any parameter is either positional or keyword.
 
-You can all it like:
+You can call it like:
 
     pow(2, 6)
     # the following should raise Exception (but don't)
@@ -25,7 +25,8 @@ You can all it like:
     pow(2, y=6, z=10)
     pow(z=10, y=6, x=2)
 
-There is no easy way specify which parameters are positional or keyword.
+There is no restriction on the calling convention, no way to specify which
+parameters are positional or keyword.
 
 ---
 
@@ -36,7 +37,7 @@ Positional-only parameters are parameters without an externally-usable name;
 when a function is called these positional arguments are mapped to these
 parameters based solely on their position.
 
-Python has always supported positional-only parameters:
+Python has always supported positional-only parameters.  In C:
 
     static PyObject
     *f(PyObject *self, PyObject *args)
@@ -53,7 +54,7 @@ Python has always supported positional-only parameters:
 
 ---
 
-# (Clumsy) Workaround
+# In Python
 
 When you don't want to write a C-extension, you can:
 
@@ -71,6 +72,14 @@ When you don't want to write a C-extension, you can:
         print(p1, p2, p3)
 
 This is much more complicated than the C equivalent :-(
+
+---
+
+# Ugh :-(
+
+<img src="./clumsy-lego.jpg" width="340" height="512" />
+
+Wouldn't it be nice to make this easier in Python?
 
 ---
 
@@ -121,6 +130,10 @@ Invalid calls:
 
     f(1, b=3) -> f() got some positional-only arguments passed
                  as keyword arguments: 'b'
+
+---
+
+<img src="./happy-lego.png" width="600" height="450" />
 
 ---
 
